@@ -1,0 +1,220 @@
+/* Variable */
+:root {
+    --min-start: 180deg;
+    --sec-start: 180deg;
+    --hour-start: 180deg;
+    --con-len: 80vh;
+}
+
+/* heading */
+.heading {
+    font-size: 50px;
+    font-family: monospace;
+    margin: 0%;
+    padding: 0%;
+    padding-bottom: 8px;
+    background: linear-gradient(54deg, #d01b1b, blue);
+    padding-bottom: 8px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+body {
+    margin: 0%;
+    background-color: gray;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    background-color: lightpink;
+    width: var(--con-len);
+    height: var(--con-len);
+    border-radius: 100px;
+    border: 10px solid black;
+    position: relative;
+    background-color: black;
+    border: 2px solid;
+}
+
+.center-dot {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    top: 47%;
+    left: 48%;
+    border-radius: 50px;
+    z-index: 10;
+    border: 2px solid white;
+}
+
+.number-con {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top-numbers {
+    width: 100%;
+    position: absolute;
+    top: 2%;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.bottom-numbers {
+    flex-direction: row;
+    position: absolute;
+    top: 92%;
+    width: 100%;
+    left: 1.5%;
+}
+
+.right-numbers {
+    position: absolute;
+    left: 92%;
+    top: 0px;
+    height: 100%;
+    align-items: end;
+    width: min-content;
+}
+
+.left-numbers {
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 5%;
+}
+
+.number {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
+    font-family: fantasy;
+    color: white;
+}
+
+/* Arrows */
+.arrows {
+    position: absolute;
+    top: 50.5%;
+    left: 50%;
+    background-color: antiquewhite;
+}
+
+.arrow {
+    background-color: black;
+    border: 2px solid white;
+    border-top: 0px;
+    width: 20px;
+    border-radius: 5px;
+    position: absolute;
+    transform-origin: top;
+    z-index: 3;
+}
+
+.hours-arrow {
+    height: 18vmin;
+    animation-name: HourRound;
+    animation-duration: calc(12 * 60 * 60s);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.936) 20% 85%, rgba(255, 255, 255, 0.953) 50%);
+
+}
+
+.minute-arrow {
+    height: 26vmin;
+    animation-name: MinuteRound;
+    animation-duration: calc(60*60s);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.889) 20% 87%, #ffffffe3 50%);
+}
+
+.second-arrow {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.729) 20% 90%, #ffffffc3 50%);
+    height: 32vmin;
+    animation: secround calc(60*1s) linear infinite;
+}
+
+@keyframes secround {
+    0% {
+        transform: rotate(var(--sec-start));
+    }
+
+    100% {
+        transform: rotate(calc(var(--sec-start) + 360deg));
+    }
+}
+
+@keyframes MinuteRound {
+    0% {
+        transform: rotate(var(--min-start));
+    }
+
+    100% {
+        transform: rotate(calc(var(--min-start) + 360deg));
+    }
+}
+
+@keyframes HourRound {
+    0% {
+        transform: rotate(var(--hour-start));
+    }
+
+    100% {
+        transform: rotate(calc(var(--hour-start) + 360deg));
+    }
+}
+
+/* digiclock */
+.digiclock {
+    background-color: transparent;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 10%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.screen {
+    background-color: rgba(238, 180, 188, 0.843);
+    height: 100%;
+    width: 40%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Date */
+.date {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 8%;
+    height: 60px;
+}
+
+.screen-date {
+    /* background-color: rgba(238, 180, 188, 0.843); */
+    height: 100%;
+    width: 70%;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 0px;
+    color: whitesmoke;
+    font-weight: bolder;
+    font-family: monospace;
+    font-size: 50px;
+    font-variant: all-small-caps;
+}
