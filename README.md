@@ -8,7 +8,7 @@ A simple web page project that features a watch-like analog clock. This project 
 
 ## Live Demo
 
-Check out the live demo [here](https://your-username.github.io/analog-clock-webpage).
+Check out the live demo [here](https://WebProject720.github.io/AnalogClock).
 
 ## Features
 
